@@ -1,0 +1,211 @@
+/* Importing Roboto font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+/* Global reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif; /* Fallback font */
+}
+
+/* Body styles */
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red; /* Red background */
+}
+
+/* Container styling */
+.container {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: white; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+    overflow: hidden;
+}
+
+/* Form container */
+.container .forms {
+    display: flex;
+    align-items: center;
+    height: 440px; /* Initial height */
+    width: 200%; /* Double the width for animation */
+    transition: height 0.2s ease; /* Smooth height transition */
+}
+
+/* Individual form styles */
+.container .form {
+    width: 50%;
+    padding: 30px;
+    background-color: white; /* White background */
+    transition: margin-left 0.18s ease; /* Smooth margin transition */
+}
+
+/* Active state for login form */
+.container.active .login {
+    margin-left: -50%; /* Shift login form out of view */
+    opacity: 0; /* Fade out login form */
+    transition: margin-left 0.18s ease, opacity 0.15s ease; /* Smooth transition */
+}
+
+/* Signup form opacity transition */
+.container .signup {
+    opacity: 0;
+    transition: opacity 0.09s ease; /* Smooth opacity transition */
+}
+
+/* Active state for signup form */
+.container.active .signup {
+    opacity: 1; /* Fade in signup form */
+    transition: opacity 0.2s ease; /* Smooth opacity transition */
+}
+
+/* Adjusted height for active forms */
+.container.active .forms {
+    height: 585px; /* Adjusted height for active forms */
+}
+
+/* Title styling */
+.container .form .title {
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+/* Title underline */
+.form .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: red; /* Red underline */
+    border-radius: 25px;
+}
+
+/* Input field container */
+.form .input_field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Input field styling */
+.input_field input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc; /* Bottom border */
+    border-top: 2px solid transparent; /* Transparent top border */
+    transition: all 0.2s ease; /* Smooth transition */
+}
+
+/* Input focus and valid state */
+.input_field input:focus,
+.input_field input:valid {
+    border-bottom-color: red; /* Red bottom border on focus or valid state */
+}
+
+/* Icon styling */
+.input_field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999; /* Gray color */
+    font-size: 23px;
+    transition: all 0.2s ease; /* Smooth transition */
+}
+
+/* Icon color on input focus or valid state */
+.input_field input:focus ~ i,
+.input_field input:valid ~ i {
+    color: red; /* Red color */
+}
+
+/* Icon position */
+.input_field i.icon {
+    left: 0;
+}
+
+/* Show/hide icon */
+.input_field i.show_hide {
+    right: 0;
+    cursor: pointer;
+}
+
+/* Checkbox text alignment */
+.form .checkbox_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Checkbox styling */
+.checkbox_text .checkbox_content {
+    display: flex;
+    align-items: center;
+}
+
+/* Checkbox input margin */
+.checkbox_content input {
+    margin: 0 8px -2px 4px;
+    accent-color: red; /* Red accent color */
+}
+
+/* Text styling */
+.form .text {
+    color: #333; /* Dark gray color */
+    font: 14px;
+}
+
+/* Link styling */
+.form a.text {
+    color: red; /* Red color */
+    text-decoration: none;
+}
+
+/* Hover state for links */
+.form a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Button styling */
+.form .button {
+    margin-top: 35px;
+}
+
+/* Button input styling */
+.form .button input {
+    border: none;
+    background-color: red; /* Red background */
+    color: white; /* White color */
+    border-radius: 6px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Button hover state */
+.button input:hover {
+    opacity: 0.8; /* Reduced opacity on hover */
+}
+
+/* Additional styling for login/signup text alignment */
+.form .login_signup {
+    margin-top: 30px;
+    text-align: center;
+}

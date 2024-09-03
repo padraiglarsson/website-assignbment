@@ -1,0 +1,644 @@
+/* Importing Roboto font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+*{
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, span {
+    color: black;
+    text-align: center;
+    line-height: 1.25;
+} 
+
+h1{
+    font: size 36px; ;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+a{
+    position: relative;
+    text-decoration: none;
+    transition: opacity 300ms ease;
+}
+
+i:hover{
+    opacity: 0.7;
+}
+
+.link_hover_effect:after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: black;
+    width: 0;
+    bottom: -3px;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+.link_hover_effect:hover:after{
+    width: 100%;
+    left:0;
+}
+
+
+li{
+    list-style-type: none;
+}
+
+.flex{
+display: flex;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+.container {
+    padding: 50px 0;
+}
+
+.row{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.red_text{
+    color: red;
+}
+
+.section_title{
+    margin-top: 20px;
+    animation: fade_up 650ms 700ms backwards;
+}
+
+/* NAVIGATION BAR */
+
+nav{
+    height: 100px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    animation: fade_in 500ms backwards;
+}
+
+
+
+.nav_link_list{
+display: flex;
+}
+
+.nav_link_anchor{
+    margin: 0 12px;
+    color: #242424;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav_link_hover_book{
+    background-color:red ;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+}
+
+.nav_link_hover_book:hover{
+    opacity: 0.7;
+}
+
+.gym_logo{
+    font-size: 24px;
+    color: red;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+/* SCROLLING BANNER */
+
+.scroll_container{
+    box-shadow: 0 4px 8px -4px black;
+}
+
+
+.scroll_container .scroll_title{
+    position: absolute;
+    height: 5.5%;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border-radius: 5%;
+    z-index: 200;
+}
+
+.scroll_container ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    animation: scroll 25s infinite linear;
+}
+
+.scroll_container ul li{
+    white-space: nowrap;
+    padding: 10px 24px;
+    position: relative;
+}
+
+.scroll_container ul li::after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #b8b8b8;
+    position: absolute;
+    top:0 ;
+    right: 0;
+}
+
+.scroll_container ul li:last-child::after{
+    display: none;
+}
+/*Animation */
+@keyframes scroll{
+    from{
+        transform: translateX(100%);
+    }
+
+    to{
+        transform: translateX(-1038px);
+    }
+}
+
+/* ABOUT GYM */
+
+#about_gym{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.about_gym_info{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.about_gym_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin:0 auto;
+    text-align: center;
+}
+
+.gym_logo_mask{
+    overflow: hidden;
+    margin-bottom: 28px;
+    animation: animate_gym_logo 800ms 200ms backwards;
+}
+/*Animation */
+@keyframes animate_gym_logo{
+    0%{
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.gym_picture{
+    width: 100%;
+}
+
+.gym_info_title{
+    margin-bottom: 16px;
+    animation: fade_up 650ms 400ms backwards;
+}
+
+.about_gym_para{
+    font-size: 20px;
+    margin-bottom: 28px;
+    animation: fade_up 650ms 500ms backwards;
+}
+
+.about_gym_link{
+    font-size: 20px;
+    color: #242424;
+    text-decoration: none;
+    padding: 0 16px;
+}
+
+.about_gym_links{
+    animation: fade_up 650ms 600ms backwards;
+}
+/*animation*/
+@keyframes fade_up{
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+/*animation*/
+@keyframes fade_in {
+    0%{
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* GYM SPONSORS */
+
+.sponsor_img{
+    width: 100%;
+    max-width: 150px;
+    transition: all 300ms ease;
+}
+
+.sponsor:hover .sponsor_img{
+    filter: brightness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+}
+
+.sponsor{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.sponsor_img_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+.sponsor_list{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    animation: fade_up 650ms 800ms backwards;
+}
+
+.sponsor_name{
+    position: absolute;
+    bottom: 30px;
+    transform: scale(0);
+    transition: all 300ms;
+    font-size: 20px;
+}
+
+.sponsor:hover .sponsor_name{
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ATHLETES */
+
+.athlete{
+    margin-bottom: 135px;
+}
+
+.athlete:last-child{
+    margin-bottom: 40px;
+}
+
+.athlete_img{
+    width: 100%;
+    transition: all 500ms ease;
+}
+
+.athlete_wrapper{
+    display: flex;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.athlete_wrapper:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1d25;
+    opacity: 0;
+    transition: opacity 450ms ease;
+    z-index: 2;
+}
+
+.athlete:hover .athlete_wrapper:before{
+    opacity: 0.7;
+}
+
+.athlete:hover .athlete_description{
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.athlete:hover .athlete_img{
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+.athlete_list{
+    padding-top: 40px;
+}
+
+.athlete_description{
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(100%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms, opacity 300ms;
+}
+
+.athlete_description_title{
+    font-size: 40px;
+}
+
+.athlete_description_para{
+    margin: 16px 0;
+}
+
+.athlete_link{
+    font-size: 20px;
+    margin-right: 16px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.athlete_description_title,
+.athlete_description_subtitle,
+.athlete_description_para,
+.athlete_links {
+    text-align: left;
+    color: #fff;
+}
+
+/* GYM SLIDER */
+
+#gym{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 35px;
+}
+
+.wrapper .carousel{
+    white-space: nowrap;
+    font-size: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+
+
+.carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging img{
+    pointer-events: none;
+}
+
+.wrapper{
+    max-width: 1200px;
+    position: relative;
+}
+
+.wrapper i{
+    top: 50%;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 46px;
+    background: red;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.wrapper i:first-child{
+    left: -23px;
+    display: none;
+}
+
+.wrapper i:last-child{
+    right: -23px;
+}
+
+.carousel img{
+    height: 340px;
+    object-fit: cover;
+    margin-left: 14px;
+    width: calc(100% / 3);
+}
+
+.gym_interior{
+    border-radius: 5%;
+}
+
+.carousel img:first-child {
+    margin-left: 0px;
+}
+
+@media (max-width: 900px){
+    .carousel img{
+        width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 550px){
+    .carousel img{
+        max-width: 100%;
+    }
+}
+
+/* GYM LOCATION */
+.location_container {
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+iframe{
+    border-radius: 5%;
+}
+
+.gym_location_address{
+    padding: 25px;
+}
+
+/* FOOTER */
+
+footer{
+    background-color: red;
+}
+
+.footer_social_list{
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8% 0;
+}
+
+.footer_logo_img{
+    width: 100px;
+    height: 100px
+}
+
+.social_link,
+.footer_copyright{
+    color: black;
+}
+
+.footer_arrow{
+    position: absolute;
+    right: 0;
+    color: black;
+    top: 50px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.footer_anchor{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer_anchor:hover .footer_arrow{
+transform: translateX(60px);
+opacity: 1;
+}
+
+
+/* PHONES, TABLETS */
+@media (max-width: 780px){
+    nav{
+        height: 70px;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+
+    .about_gym_para{
+        font-size: 20px;
+    }
+
+    iframe{
+        max-width: 500px;
+    }
+
+    .sponsor{
+        width: calc(100% / 2);
+    }
+
+    .athlete_description_para{
+        font-size: 12px;
+    }
+
+    .athlete_description{
+        left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* SMALL PHONES */
+@media(max-width : 480px){
+    .nav_link:not(:last-child){
+    display: none;
+    }
+
+    .athlete_description_para{
+        display: none;
+    }
+
+    iframe{
+        max-width: 200px;
+    }
+
+    .athlete_links{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .athlete_description{
+        padding: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .athlete_description_title{
+        font-size: 30px;
+        line-height: 1;
+        text-align: center;
+    }
+
+
+    .athlete_description_subtitle{
+        text-align: center;
+        margin: 12px 0
+    }
+}
